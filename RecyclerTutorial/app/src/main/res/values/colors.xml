@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="appStore">#008080</color>
+    <color name="GREEN">#76FF03</color>
+    <color name="WHITE">#FFFFFF</color>
+    <color name="GREY">#e9ebed</color>
+    <color name="BLUE">#1E88E5</color>
+    <color name="ExtraBlue">#0087d0</color>
+    <color name="BLUE300">#64B5F6</color>
+    <color name="Blue400">#42A5F5</color>
+    <color name="recomend">#98a1a5</color>
+    <color name="patientTab">#889db2</color>
+    <color name="startingScreen">#ffffff</color>
+    <color name="medicationIndicator">#0087d0</color>
+    <color name="dividerForTabHost">#bbc6d1</color>
+    <color name="colorForBoldTextInConnectionDetail">#434a4c</color>
+    <color name="colorForLowerBoldText">#454c4e</color>
+    <color name="colorForTestimonial">#222222</color>
+    <color name="chatText">#4a4a4a</color>
+    <color name="LIGHTBLUE">#E0E0E0</color>
+    <color name="Blue700">#1976D2</color>
+    <color name="Blue600">#1E88E5</color>
+    <color name="encounterDetailText">#333333</color>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorAccent">#F44336</color>
+    <color name="colorFAB1">#2196F3</color>
+    <color name="black">#000000</color>
+    <color name="half_black">#808080</color>
+    <color name="colorFAB2">#E040FB</color>
+    <color name="RED">#F44336</color>
+    <color name="filterColor">#0089d3</color>
+    <color name="PatientViewTextColor">#737373</color>
+    <color name="EncounterDetailAboveBar">#e4e3e3</color>
+    <color name="Rhino">#404959</color>
+    <color name="defaultConnection">#c3ced8</color>
+    <color name="color_for_patient_list">#878d9a</color>
+    <color name="add_connection">#00aaf6</color>
+    <color name="Manatee">#878D9A</color>
+    <color name="DARKGREY">#9E9E9E</color>
+    <color name="BUTTON_GREY">#D7D8D8</color>
+    <color name="BLACKISH_GREY">#5C636D</color>
+    <color name="chatsending">#f9fdff</color>
+    <color name="DARKBLUE">#0091EA</color>
+    <color name="apptheme_color">#DA4A38</color>
+    <color name="ColorPrimary">#e62117</color>
+    <color name="ColorPrimaryDark">#0D47A1</color>
+    <color name="accentcolor">#81D4FA</color>
+    <color name="tabsScrollColor">#8a140e</color>
+    <color name="iosBlue">#007AFF</color>
+    <integer-array name="contacts_text_background_colors">
+        <item>0xFF9C27B0</item>
+        <item>0xFFFF5722</item>
+        <item>0xFF3F51B5</item>
+        <item>0xFFDB4437</item>
+        <item>0xFFEF6C00</item>
+        <item>0xFF689F38</item>
+        <item>0xFF757575</item>
+        <item>0xFF0F9D58</item>
+        <item>0xFF3F51B5</item>
+        <item>0xFF0097A7</item>
+    </integer-array>
+    <!--++++++++++++++++++++-->
+    <!--listview item colors-->
+    <!--++++++++++++++++++++-->
+    <color name="listview_pressed">#FFdddddd</color>
+    <color name="listview_focused">#FF7dbcd3</color>
+    <color name="listview_checked">#FFededed</color>
+    <color name="providerColor">#339FD9</color>
+    <color name="connectionColor">#9E9E9E</color>
+    <color name="securityGroupColor">#339FD9</color>
+    <color name="groupChat">#9E9E9E</color>
+    <color name="inviteColor">#DDDDDD</color>
+    <color name="textColor">#000000</color>
+    <color name="patientColor">#FF7dbcd3</color>
+    <color name="pinned_header_text">#FF3c3c3c</color>
+    <color name="BLACK">#000000</color>
+    <color name="MILD_GREY">#DDDDDD</color>
+    <color name="SCREEN_COLOUR">#F6F6F6</color>
+    <color name="Indigo300">#339FD9</color>
+    <color name="Indigo400">#5C6BC0</color>
+    <color name="Indigo500">#0482c5</color>
+</resources>

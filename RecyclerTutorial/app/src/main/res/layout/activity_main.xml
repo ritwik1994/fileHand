@@ -1,0 +1,195 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:weightSum="3"
+        android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/searchBar"
+                android:background="@color/Indigo300">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="Search For Defaulters"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:layout_margin="10dp"
+                    android:paddingRight="15dp"
+                    android:drawableRight="@drawable/ic_search_black_24px"
+                    android:background="@drawable/rectangular"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/buttonsToSelect"
+                android:background="@color/Indigo300"
+                android:layout_below="@+id/searchBar"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/WHITE"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:text="Search Defaulters"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/WHITE"
+                    android:layout_marginTop="10dp"
+                    android:text="Report Defaulter"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/WHITE"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Converstaion"/>
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_weight="1"
+                android:layout_below="@+id/buttonsToSelect"
+                android:layout_marginTop="10dp"
+                android:id="@+id/hrlist_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hrlist_recycler_view"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center"
+            android:textSize="26sp"
+            android:textColor="@color/Indigo300"
+            android:id="@+id/information"
+            android:text="Hire great candidates with confidence now"/>
+
+
+
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="2sp"
+                app:cardBackgroundColor="#9E9E9E">
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:minHeight="?android:attr/listPreferredItemHeight"
+                    android:id="@+id/containerForInfo"
+                    >
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/testing"
+                        android:layout_marginTop="15dp"
+                        android:theme="@style/TextLabelForEdittext"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:textColor="@color/WHITE"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/WHITE"
+                            android:hint="Company Name"
+                            android:maxLines="1" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/testing1"
+                        android:layout_below="@+id/testing"
+                        android:theme="@style/TextLabelForEdittext"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:focusable="false"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_height="wrap_content">
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:textColor="@color/WHITE"
+                            android:focusable="false"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/defaultTime"
+                            android:textColorHint="@color/WHITE"
+                            android:hint="Defaulter's Date Of Joining" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_below="@+id/testing1"
+                        android:id="@+id/uploadFromMobile"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="120dp"
+                        android:drawableLeft="@drawable/ic_content_paste_black_24px"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="50dp"
+                        android:text="Upload Resume"
+                        android:textColor="@color/BLACK"
+                        android:background="@drawable/resume"
+                        android:layout_marginBottom="20dp"
+                        />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="12dp"
+            android:layout_below="@+id/card_view"
+            android:id="@+id/reportAbuse"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="REPORT ABUSE"
+            android:textColor="@color/WHITE"
+            android:background="@drawable/report_abuse"
+            android:layout_marginBottom="20dp"
+            />
+
+
+    </RelativeLayout>
+</ScrollView>
