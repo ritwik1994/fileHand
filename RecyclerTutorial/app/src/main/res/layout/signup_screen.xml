@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3"
+    android:background="@color/WHITE"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/ExtraBlue"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/emailAddress"
+            android:theme="@style/TextLabelForEdittextForLogin"
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:focusable="false"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:textColor="@color/WHITE"
+                android:focusable="false"
+                android:layout_height="wrap_content"
+                android:id="@+id/emailAddressText"
+                android:textColorHint="@color/WHITE"
+                android:hint="Official Email Address e.g john@amazon.com" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/password"
+            android:layout_below="@+id/emailAddress"
+            android:theme="@style/TextLabelForEdittextForLogin"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:focusable="false"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:textColor="@color/WHITE"
+                android:focusable="false"
+                android:layout_height="wrap_content"
+                android:id="@+id/passwordText"
+                android:textColorHint="@color/WHITE"
+                android:hint="Password" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/confirmPassword"
+            android:layout_below="@+id/password"
+            android:theme="@style/TextLabelForEdittextForLogin"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:focusable="false"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:textColor="@color/WHITE"
+                android:focusable="false"
+                android:layout_height="wrap_content"
+                android:id="@+id/confirmPasswordText"
+                android:textColorHint="@color/WHITE"
+                android:hint="Confirm Password" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/confirmPassword"
+            android:id="@+id/reportAbuse"
+            android:layout_marginLeft="12dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:text="Sign Up"
+            android:textColor="@color/WHITE"
+            android:background="@drawable/signup_box"
+            android:layout_marginBottom="20dp"
+            />
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

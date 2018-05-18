@@ -35,6 +35,7 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -94,6 +95,15 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#339FD9")));
         actionBar.setElevation(0);
         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        ImageButton loginButton = (ImageButton)mActionBarView.findViewById(R.id.loginButton);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent loginIntent = new Intent(MainActivity.this,LogIn.class);
+                startActivity(loginIntent);
+            }
+        });
         mRecyclerView = (RecyclerView) findViewById(R.id.hrlist_recycler_view);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -134,6 +144,14 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         TextView button = (TextView) findViewById(R.id.uploadFromMobile);
+        TextView abuseButton = (TextView) findViewById(R.id.reportAbuse);
+        abuseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent abuseIntent = new Intent(MainActivity.this,CandidatureData.class);
+                startActivity(abuseIntent);
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

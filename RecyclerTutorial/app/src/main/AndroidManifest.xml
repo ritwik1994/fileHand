@@ -26,6 +26,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".LogIn"
+            android:configChanges="locale"
+            android:label="Log In"/>
+
+        <activity
+            android:name=".CandidatureData"
+            android:label="Candidature Data"
+            android:configChanges="locale" />
+
     </application>
 
 </manifest>

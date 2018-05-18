@@ -13,7 +13,7 @@
 
     <ImageButton android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/search"
+        android:id="@+id/loginButton"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:background="@color/Indigo300"
