@@ -37,6 +37,11 @@
             android:label="Candidature Data"
             android:configChanges="locale" />
 
+        <activity
+            android:name=".Signup"
+            android:label="Signup Screen"
+            android:configChanges="locale" />
+
     </application>
 
 </manifest>

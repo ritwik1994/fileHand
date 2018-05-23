@@ -29,10 +29,11 @@
             android:layout_height="wrap_content">
             <EditText
                 android:layout_width="match_parent"
-                android:textColor="@color/WHITE"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/WHITE"
+                android:textColorHint="@color/black"
                 android:hint="Candidates's Name"
+                android:id="@+id/candidateNameText"
                 android:maxLines="1" />
         </android.support.design.widget.TextInputLayout>
 
@@ -47,9 +48,10 @@
             android:layout_height="wrap_content">
             <EditText
                 android:layout_width="match_parent"
-                android:textColor="@color/WHITE"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/WHITE"
+                android:id="@+id/emailText"
+                android:textColorHint="@color/black"
                 android:hint="Candidates's Email address"
                 android:maxLines="1" />
         </android.support.design.widget.TextInputLayout>
@@ -65,9 +67,10 @@
             android:layout_height="wrap_content">
             <EditText
                 android:layout_width="match_parent"
-                android:textColor="@color/WHITE"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/WHITE"
+                android:id="@+id/nameCompanyText"
+                android:textColorHint="@color/black"
                 android:hint="Candidates's current company name"
                 android:maxLines="1" />
         </android.support.design.widget.TextInputLayout>
@@ -86,7 +89,7 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:textColor="@color/WHITE"
+            android:textColor="@color/black"
             android:layout_height="200dp"
             android:id="@+id/nature"
             android:layout_marginLeft="12dp"

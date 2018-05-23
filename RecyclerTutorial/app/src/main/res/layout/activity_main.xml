@@ -127,6 +127,7 @@
                             android:layout_width="match_parent"
                             android:textColor="@color/WHITE"
                             android:layout_height="wrap_content"
+                            android:id="@+id/HrCompany"
                             android:textColorHint="@color/WHITE"
                             android:hint="Company Name"
                             android:maxLines="1" />

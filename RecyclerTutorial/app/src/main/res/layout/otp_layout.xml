@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="4"
+    android:background="@color/WHITE"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/ExtraBlue"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VERIFY YOUR ACCOUNT"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:id="@+id/simpleText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/simpleText"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:id="@+id/otpText"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:textSize="12sp"
+            android:text="Your OTP has been sent to you on your official E-Mail Id. Please enter it below to verify"/>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/otpLayout"
+            android:theme="@style/TextLabelForEdittextForLogin"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/otpText"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:id="@+id/otp"
+                android:textColorHint="@color/black"
+                android:hint="Enter Valid OTP" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/otpLayout"
+            android:id="@+id/verifyOtp"
+            android:layout_marginLeft="12dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="VERIFY OTP"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/WHITE"
+            android:background="@drawable/signup_box"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Didn't recieved OTP?"
+            android:id="@+id/normalText"
+            android:layout_below="@+id/verifyOtp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:textSize="14sp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_below="@+id/normalText"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_below="@+id/otpLayout"
+                android:id="@+id/resendOtp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:gravity="center"
+                android:text="RESEND OTP"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/WHITE"
+                android:background="@drawable/report_abuse"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_below="@+id/otpLayout"
+                android:id="@+id/changeEmail"
+                android:layout_marginLeft="12dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="CHANGE EMAIL-ID"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/WHITE"
+                android:background="@drawable/signup_box"
+                />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

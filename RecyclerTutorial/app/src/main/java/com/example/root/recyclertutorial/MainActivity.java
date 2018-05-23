@@ -15,6 +15,7 @@ import android.os.Looper;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,15 +28,18 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -73,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
     private ActionBar actionBar;
     final int pixelsToMove = 200;
     String filename;
+    public TextInputLayout HrCompanyNameInput,DateOfKoiningInputLayout;
+    public EditText HrCompanyEdit;
     private final Handler mHandler = new Handler(Looper.getMainLooper());
     private RecyclerView.LayoutManager mLayoutManager;
     private final Runnable SCROLLING_RUNNABLE = new Runnable() {
@@ -104,13 +110,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(loginIntent);
             }
         });
+        HrCompanyNameInput = (TextInputLayout)findViewById(R.id.testing);
+        DateOfKoiningInputLayout = (TextInputLayout)findViewById(R.id.testing1);
+        HrCompanyEdit = (EditText)findViewById(R.id.HrCompany);
         mRecyclerView = (RecyclerView) findViewById(R.id.hrlist_recycler_view);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
-//        mRecyclerView.setLayoutManager(new LinearLayoutManager(this,
-//                LinearLayoutManager.HORIZONTAL, false));
         datePick = (EditText)findViewById(R.id.defaultTime);
         datePick.setOnClickListener(new View.OnClickListener() {
 
@@ -126,8 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
                 DatePickerDialog mDatePicker=new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
                     public void onDateSet(DatePicker datepicker, int selectedyear, int selectedmonth, int selectedday) {
-                        // TODO Auto-generated method stub
-                    /*      Your code   to get date and time    */
+                        datePick.setText(selectedday + "-" + (selectedmonth+1) + "-" + selectedyear);
                     }
                 },mYear, mMonth, mDay);
                 mDatePicker.setTitle("Select date");
@@ -135,21 +141,14 @@ public class MainActivity extends AppCompatActivity {
         });
         SnapHelper snapHelperStart = new GravitySnapHelper(Gravity.START);
         snapHelperStart.attachToRecyclerView(mRecyclerView);
-
-
-
-
-
         mAdapter = new SubActivityAdapter(this, getData());
         mRecyclerView.setAdapter(mAdapter);
-
         TextView button = (TextView) findViewById(R.id.uploadFromMobile);
         TextView abuseButton = (TextView) findViewById(R.id.reportAbuse);
         abuseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent abuseIntent = new Intent(MainActivity.this,CandidatureData.class);
-                startActivity(abuseIntent);
+                AttemptAdd();
             }
         });
 
@@ -159,46 +158,54 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                 intent.setType("*/*");
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
-                //intent.putExtra("browseCoa", itemToBrowse);
-                //Intent chooser = Intent.createChooser(intent, "Select a File to Upload");
                 try {
-                    //startActivityForResult(chooser, FILE_SELECT_CODE);
                     startActivityForResult(Intent.createChooser(intent, "Select a File to Upload"),FILE_SELECT_CODE);
                 } catch (Exception ex) {
                     System.out.println("browseClick :"+ex);//android.content.ActivityNotFoundException ex
                 }
-//                Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
-//                chooseFile.setType("*/*");
-//                chooseFile = Intent.createChooser(chooseFile, "Choose a file");
-//                startActivityForResult(chooseFile, PICKFILE_RESULT_CODE);
+
             }
         });
-//
-//        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-//            @Override
-//            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-//                super.onScrolled(recyclerView, 200, dy);
-//                int lastItem = layoutManager.findLastCompletelyVisibleItemPosition();
-//                if(lastItem == layoutManager
-//                        .getItemCount()-1){
-//                    mHandler.removeCallbacks(SCROLLING_RUNNABLE);
-//                    Handler postHandler = new Handler();
-//                    postHandler.postDelayed(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            mRecyclerView.setAdapter(null);
-//                            mRecyclerView.setAdapter(mAdapter);
-//                            mHandler.postDelayed(SCROLLING_RUNNABLE, 50000);
-//                        }
-//                    }, 50000);
-//                }
-//            }
-//        });
-//        mHandler.postDelayed(SCROLLING_RUNNABLE, 2000);
 
-        //Layout manager for the Recycler View
-//        mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-//        mRecyclerView.setLayoutManager(mLayoutManager);
+    }
+
+    public void AttemptAdd() {
+
+        boolean cancel = false;
+        String companyName = HrCompanyEdit.getText().toString();
+        String dateOfJoining = datePick.getText().toString();
+        if (TextUtils.isEmpty(companyName)) {
+            HrCompanyNameInput.setError("Please fill this field");
+            requestFocus(HrCompanyEdit);
+            cancel = true;
+        }else
+        {
+            HrCompanyNameInput.setErrorEnabled(false);
+        }
+
+        if (TextUtils.isEmpty(dateOfJoining)) {
+            DateOfKoiningInputLayout.setError("Please fill this field");
+            requestFocus(datePick);
+            cancel = true;
+        }else
+        {
+            DateOfKoiningInputLayout.setErrorEnabled(false);
+        }
+
+        if (cancel) {
+        } else {
+            Intent abuseIntent = new Intent(MainActivity.this,CandidatureData.class);
+            abuseIntent.putExtra("hrCompanyName",companyName);
+            abuseIntent.putExtra("DOJ", dateOfJoining);
+            startActivity(abuseIntent);
+        }
+
+    }
+
+    private void requestFocus(View view) {
+        if (view.requestFocus()) {
+            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        }
     }
 
     @Override
