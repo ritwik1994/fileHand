@@ -129,7 +129,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/HrCompany"
                             android:textColorHint="@color/WHITE"
-                            android:hint="Company Name"
+                            android:hint="HR Company's Name"
                             android:maxLines="1" />
                     </android.support.design.widget.TextInputLayout>
 

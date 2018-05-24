@@ -41,7 +41,7 @@
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:textSize="12sp"
-            android:text="Your OTP has been sent to you on your official E-Mail Id. Please enter it below to verify"/>
+            android:text="Your OTP has been sent to you on your official E-Mail Id. Please enter it below to verify. If the account is not verified than candidates which are reported will not be synced in database and will be lost"/>
 
 
         <android.support.design.widget.TextInputLayout
