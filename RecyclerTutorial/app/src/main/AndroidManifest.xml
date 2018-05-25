@@ -42,6 +42,11 @@
             android:label="Signup Screen"
             android:configChanges="locale" />
 
+        <activity
+            android:name=".VerifyOtp"
+            android:label="Verify Otp"
+            android:configChanges="locale" />
+
     </application>
 
 </manifest>

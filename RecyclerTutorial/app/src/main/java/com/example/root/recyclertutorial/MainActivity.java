@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
                 DatePickerDialog mDatePicker=new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
                     public void onDateSet(DatePicker datepicker, int selectedyear, int selectedmonth, int selectedday) {
-                        datePick.setText(selectedday + "-" + (selectedmonth+1) + "-" + selectedyear);
+                        datePick.setText(selectedyear + "-" + (selectedmonth+1) + "-" + selectedday);
                     }
                 },mYear, mMonth, mDay);
                 mDatePicker.setTitle("Select date");
