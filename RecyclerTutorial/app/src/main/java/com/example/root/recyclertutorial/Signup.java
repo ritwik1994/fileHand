@@ -32,6 +32,7 @@ public class Signup extends AppCompatActivity {
     public TextInputLayout HrEmailInput, PasswordInput, ConfirmPasswordInput;
     public EditText HrEmailEdit, PassEdit,ConfirmPassEdit;
     public TextView signUp;
+    public String candidatePk="", hrPk = "";
     private DatabaseHelper mDataHelper;
 
     @Override
@@ -261,6 +262,7 @@ public class Signup extends AppCompatActivity {
                 }
                 if(responseObject.has("id")){
                     id = responseObject.getString("id");
+                    candidatePk = id;
                 }
                 SQLiteDatabase db = mDataHelper.getWritableDatabase();
                 ContentValues cv = new ContentValues();
@@ -397,6 +399,9 @@ public class Signup extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             Intent otpScreen = new Intent(Signup.this, VerifyOtp.class);
+            otpScreen.putExtra("CandidatePK", candidatePk);
+            otpScreen.putExtra("HrPK",HrPrimaryKey);
+            otpScreen.putExtra("EmailId",HrEmailEdit.getText().toString());
             startActivity(otpScreen);
         }
 
